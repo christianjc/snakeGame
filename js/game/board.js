@@ -1,8 +1,3 @@
-function World() {
-    this.grid
-    this.score
-}
-
 export class Grid {
     constructor(ctx, width, height, sqSize) {
         this.ctx = ctx
