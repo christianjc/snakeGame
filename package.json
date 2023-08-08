@@ -1,0 +1,23 @@
+{
+  "name": "snakegame",
+  "version": "1.0.0",
+  "description": "Snake game ",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christianjc/snakeGame.git"
+  },
+  "keywords": [
+    "snake",
+    "game"
+  ],
+  "author": "Christian Castaneda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christianjc/snakeGame/issues"
+  },
+  "homepage": "https://github.com/christianjc/snakeGame#readme"
+}
