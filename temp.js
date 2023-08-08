@@ -1,4 +1,93 @@
-import { Grid } from './world.js'
+class Node {
+    constructor(data = null) {
+        this.data = data
+        this.next = null
+    }
+}
+
+class LinkedList {
+    constructor() {
+        this.sentinel = new Node() // Sentinel node
+        this.size = 0
+    }
+
+    // Append a new node to the end
+    append(data) {
+        const newNode = new Node(data)
+        let current = this.sentinel
+        while (current.next) {
+            current = current.next
+        }
+        current.next = newNode
+        this.size++
+    }
+
+    // Insert a new node at a specific position
+    insertAt(data, index) {
+        if (index < 0 || index > this.size) return false
+
+        const newNode = new Node(data)
+        let current = this.sentinel
+        let i = 0
+        while (i < index) {
+            i++
+            current = current.next
+        }
+        newNode.next = current.next
+        current.next = newNode
+        this.size++
+    }
+
+    // Remove a node by its value
+    remove(data) {
+        let current = this.sentinel
+        while (current.next) {
+            if (current.next.data === data) {
+                current.next = current.next.next
+                this.size--
+                return data
+            }
+            current = current.next
+        }
+        return null
+    }
+
+    // Find a node by its value
+    find(data) {
+        let current = this.sentinel.next
+        while (current) {
+            if (current.data === data) {
+                return current
+            }
+            current = current.next
+        }
+        return null
+    }
+
+    // Print the linked list
+    print() {
+        let current = this.sentinel.next
+        let result = ''
+        while (current) {
+            result += current.data + ' -> '
+            current = current.next
+        }
+        result += 'null'
+        console.log(result)
+    }
+}
+
+// Usage
+const list = new LinkedList()
+list.append(10)
+list.append(20)
+list.append(30)
+list.print() // 10 -> 20 -> 30 -> null
+list.insertAt(25, 2)
+list.print() // 10 -> 20 -> 25 -> 30 -> null
+list.remove(20)
+list.print() // 10 -> 25 -> 30 -> null
+console.log(list.find(25)) // Node { data: 25, next: Node { data: 30, next: null } }
 
 // let snake = [{ top: 200, left: 200 }]
 // let apple = null

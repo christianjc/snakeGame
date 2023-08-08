@@ -1,4 +1,4 @@
-import { Grid } from './game/board.js'
+import { Grid } from './js/game/board.js'
 
 let canvas = document.getElementById('gameCanvas')
 let ctx = canvas.getContext('2d')
